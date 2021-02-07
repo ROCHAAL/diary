@@ -12,9 +12,9 @@ describe 'Entry'do
 it 'add an entry to the diary'do
 entry = Entry.new('date', 'body')
 diary = Diary.new
-entry.add_entry(diary)
+diary.add_entry(entry)
 expect(diary.entries.length).to eq(1)
-expect
+
 end
 end
 end
