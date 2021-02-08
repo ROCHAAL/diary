@@ -3,9 +3,12 @@ require 'daily_diary'
  describe 'Diary' do
  it 'find all entries to the diary'do
  diary = Diary.new
- diary.find_entries
- expect(diary.find_entries).to eq(0)
+ entry = Entry.new('date', 'body')
+ diary.add_entry(entry)
+ diary.find_entries('body')
+ expect(diary.find_entries('body')).to eq('first_entry')
 
+end
 end
 
 describe 'Entry'do
@@ -16,7 +19,13 @@ diary.add_entry(entry)
 expect(diary.entries.length).to eq(1)
 
 end
-end
+# it 'can see the entries 'do
+# entry = Entry.new('date', 'body')
+# diary = Diary.new
+#
+# entry.see_entries
+# expect(diary.entries[0]).to eq('date', 'body')
+# end
 end
 
 
