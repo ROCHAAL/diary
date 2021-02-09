@@ -6,7 +6,7 @@ require 'daily_diary'
  entry = Entry.new('date', 'body')
  diary.add_entry(entry)
  diary.find_entries('body')
- expect(diary.find_entries('body')).to eq('first_entry')
+ expect(diary.find_entries('body')).to eq(1)
 
 end
 end
@@ -19,13 +19,13 @@ diary.add_entry(entry)
 expect(diary.entries.length).to eq(1)
 
 end
-# it 'can see the entries 'do
-# entry = Entry.new('date', 'body')
-# diary = Diary.new
-#
-# entry.see_entries
-# expect(diary.entries[0]).to eq('date', 'body')
-# end
+ it 'can see the entries 'do
+ entry = Entry.new('date', 'body')
+diary = Diary.new
+
+ entry.see_entries
+expect(diary.entries[0]).to eq('date', 'body')
+ end
 end
 
 

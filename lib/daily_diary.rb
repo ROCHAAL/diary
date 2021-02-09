@@ -8,7 +8,7 @@ end
 
     def find_entries(input_body)
 
-      @entries.select { |entry|  entry.body == input_body }
+      @entries.select { |entry|  entry.body == input_body}.count
     end
 
   def add_entry(new_entry)
