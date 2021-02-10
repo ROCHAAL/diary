@@ -5,10 +5,16 @@ require 'daily_diary'
  diary = Diary.new
  entry = Entry.new('date', 'body')
  diary.add_entry(entry)
- diary.find_entries('body')
- expect(diary.find_entries('body')).to eq(1)
-
+ expect(diary.find_entries('date')).to match_array(Entry)
+#to check if the returned value matches the content of expected array (match_array):
 end
+# it 'can see the entries 'do
+# diary = Diary.new
+# entry = Entry.new('date', 'body')
+# diary.add_entry(entry)
+# expect(diary.entries[0]).to eq(1)
+# expect(diary.see_entries).to eq(1)
+# end
 end
 
 describe 'Entry'do
@@ -19,15 +25,9 @@ diary.add_entry(entry)
 expect(diary.entries.length).to eq(1)
 
 end
- it 'can see the entries 'do
- entry = Entry.new('date', 'body')
-diary = Diary.new
 
- entry.see_entries
-expect(diary.entries[0]).to eq('date', 'body')
- end
 end
 
-
+#÷
 #input       # output
 # entry(string)  'new_entry' (string)

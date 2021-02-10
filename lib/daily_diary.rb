@@ -6,21 +6,25 @@ def initialize
   @entries = []
 end
 
-    def find_entries(input_body)
+    def find_entries(input_date)
 
-      @entries.select { |entry|  entry.body == input_body}.count
+      @entries.select { |entry|  entry.date == input_date }
     end
 
   def add_entry(new_entry)
     @entries.push(new_entry)
   end
+
+  #def see_entries
+  #  @entries.each { |entry| entry == body > 0 }
+  #end
 end
 
 
 
 class Entry
 
-attr_reader :date, :body
+attr_reader :date, :body, :entries
 def initialize(date, body)
 
 @date = date
@@ -30,7 +34,7 @@ end
 
 
 
-def see_entries
-  @entries
-end
+#def see_entries
+#  @entries
+#end
 end
