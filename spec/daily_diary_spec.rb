@@ -5,16 +5,15 @@ require 'daily_diary'
  diary = Diary.new
  entry = Entry.new('date', 'body')
  diary.add_entry(entry)
- expect(diary.find_entries('date')).to match_array(Entry)
+ expect(diary.find_entries('date')).to match_array([entry])
 #to check if the returned value matches the content of expected array (match_array):
 end
-# it 'can see the entries 'do
-# diary = Diary.new
-# entry = Entry.new('date', 'body')
-# diary.add_entry(entry)
-# expect(diary.entries[0]).to eq(1)
-# expect(diary.see_entries).to eq(1)
-# end
+it ' finds the date that has the most entries'do
+diary = Diary.new
+entry = Entry.new('date', 'body')
+diary.add_entry(entry)
+expect(diary.find_dates_with_more_entries).to eq('date')
+end
 end
 
 describe 'Entry'do
@@ -31,3 +30,7 @@ end
 #÷
 #input       # output
 # entry(string)  'new_entry' (string)
+
+#As a user,
+#So I know what was my busiest day,
+#I can find out which date had the most entries.

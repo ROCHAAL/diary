@@ -15,9 +15,10 @@ end
     @entries.push(new_entry)
   end
 
-  #def see_entries
-  #  @entries.each { |entry| entry == body > 0 }
-  #end
+  def find_dates_with_more_entries
+    @entries.select { |date| date.body }.max.date
+
+  end
 end
 
 
