@@ -15,7 +15,7 @@ end
     @entries.push(new_entry)
   end
 
-  def find_dates_with_more_entries
+  def find_date_with_more_entries
     @entries.select { |date| date.body }.max.date
 
   end
