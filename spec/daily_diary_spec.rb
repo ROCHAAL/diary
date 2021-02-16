@@ -11,8 +11,10 @@ end
 it ' finds the date that has the most entries'do
 diary = Diary.new
 entry = Entry.new('date', 'body')
+entry2 = Entry.new('02.04.19', 'Sara')
 diary.add_entry(entry)
-expect(diary.find_dates_with_more_entries).to eq('date')
+diary.add_entry(entry2)
+expect(diary.find_date_with_more_entries).to eq('date')
 end
 end
 

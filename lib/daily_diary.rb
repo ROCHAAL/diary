@@ -15,10 +15,28 @@ end
     @entries.push(new_entry)
   end
 
-  def find_date_with_more_entries
-    @entries.select { |date| date.body }.max.date
+    def find_date_with_more_entries
+      @entries.select { |date| date.body }.max.date
 
-  end
+    end
+      # def find_date_with_more_entries
+      #   selected_entries = @entries.select { |date| date.body }
+      #   max_entry = selected_entries.max
+      #   date = max_entry.date
+      #
+
+
+
+    # selected_entries = @entries.select { |date| date.body }
+    # p "selected_entries"
+    # p selected_entries
+    # max = selected_entries.max
+    # p "max"
+    # p max
+    # date = max.date
+    # p "date"
+    # p date
+
 end
 
 
