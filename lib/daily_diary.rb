@@ -1,6 +1,6 @@
 
 class Diary
-attr_reader :entries, :date, :body
+  attr_reader :entries, :date, :body
 
 def initialize
   @entries = []
@@ -16,8 +16,8 @@ end
   end
 
     def find_date_with_more_entries
+      #refactor me, maybe rubocop can give you some pointers
       dates_only = []
-      # @entries.select { |date| date.body }.max.date
       @entries.each do |x|
         dates_only << x.date
       end
