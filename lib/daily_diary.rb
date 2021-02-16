@@ -16,9 +16,17 @@ end
   end
 
     def find_date_with_more_entries
-      @entries.select { |date| date.body }.max.date
-
+      dates_only = []
+      # @entries.select { |date| date.body }.max.date
+      @entries.each do |x|
+        dates_only << x.date
+      end
+      dates_only.max_by do |y|
+        dates_only.count(y)
+      end
     end
+
+
       # def find_date_with_more_entries
       #   selected_entries = @entries.select { |date| date.body }
       #   max_entry = selected_entries.max
