@@ -16,7 +16,7 @@ end
   end
 
     def find_date_with_more_entries
-      @entries.select { |date| date.body }.max.date
+      @entries.select { |x| x.date[] }
 
     end
       # def find_date_with_more_entries

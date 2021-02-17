@@ -10,11 +10,13 @@ require 'daily_diary'
 end
 it ' finds the date that has the most entries'do
 diary = Diary.new
-entry = Entry.new('date', 'body')
-entry2 = Entry.new('02.04.19', 'Sara')
+entry = Entry.new('02.04.19', 'Pat')
+entry2 = Entry.new('02.04.19', 'Jon')
+entry3 = Entry.new('07.04.19', 'Sara')
 diary.add_entry(entry)
 diary.add_entry(entry2)
-expect(diary.find_date_with_more_entries).to eq('date')
+diary.add_entry(entry3)
+expect(diary.find_date_with_more_entries).to eq('02.04.19')
 end
 end
 
