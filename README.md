@@ -22,3 +22,12 @@ I can find out which date had the most entries.
 
 
 ```
+
+To run this program in IRB type:
+
+`irb -r './lib/daily_diary.rb'`
+or
+launch irb
+`irb`
+and type
+`require './lib/daily_diary.rb'`
